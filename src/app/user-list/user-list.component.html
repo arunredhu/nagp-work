@@ -8,7 +8,7 @@
   </button>
 </div>
 <div *ngIf="isListShown">
-  <div *ngFor="let user of (userService.users | lengthValidator: listFilter)">
+  <div *ngFor="let user of (employeess | lengthValidator: listFilter)">
     <app-user-info [user]="user"></app-user-info>
   </div>
 </div>

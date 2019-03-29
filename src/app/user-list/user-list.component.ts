@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../services/users.service';
+import { UsersService, Employee } from '../services/users.service';
 
 @Component({
   selector: 'app-user-list',
@@ -11,12 +11,17 @@ export class UserListComponent implements OnInit {
   inputType = 'number';
   isListShown = true;
   listFilter: string;
+  employeess: Employee[] = [];
 
   today = new Date();
 
   isClass = true;
 
-  constructor(public userService: UsersService) {}
+  constructor(public userService: UsersService) {
+    const subs = this.userService.getEmployees().subscribe(data => {
+      this.employeess = data;
+    });
+  }
 
   ngOnInit() {}
 

@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { LengthValidatorPipe } from './pipes/length-validator.pipe';
 import { UserListComponent } from './user-list/user-list.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,7 @@ import { UserListComponent } from './user-list/user-list.component';
     LengthValidatorPipe,
     UserListComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
   exports: []

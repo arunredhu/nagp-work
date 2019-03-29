@@ -1,2 +1,6 @@
 <h1>Hi I am the root component</h1>
-<app-user-list></app-user-list>
+<a [routerLink]="['/employee']" routerLinkActive="router-link-active"
+  >Goto amployee</a
+>
+<!-- <app-user-list></app-user-list> -->
+<router-outlet></router-outlet>

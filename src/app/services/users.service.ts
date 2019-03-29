@@ -1,29 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+export interface Employee {
+  name: string;
+  age: number;
+  gender: string;
+  experience: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-  users = [
-    {
-      name: 'John',
-      age: 23,
-      gender: 'Male',
-      experience: 4
-    },
-    {
-      name: 'Deepak',
-      age: 41,
-      gender: 'Male',
-      experience: 10
-    },
-    {
-      name: 'Deepak',
-      age: 41,
-      gender: 'Male',
-      experience: 2
-    }
-  ];
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
+  getEmployees() {
+    const url = '/assets/employee.json';
+
+    return this.http.get<Employee[]>(url);
+  }
 }
