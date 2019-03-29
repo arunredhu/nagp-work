@@ -1,0 +1,23 @@
+.user-info {
+  display: flex;
+  margin: 16px;
+  border: 1px solid #f3d195;
+  border-radius: 5px;
+  padding: 12px;
+  background: #f3d195;
+
+  span {
+    margin-right: 12px;
+  }
+}
+
+.user-exp {
+  display: flex;
+  outline: none;
+}
+
+.inc-btn {
+  padding: 5px;
+  border-radius: 50%;
+  background: #d2d2d2;
+}

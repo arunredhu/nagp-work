@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="name" />
+
+<div>
+  Filter the list: <input type="text" [(ngModel)]="listFilter" /><button
+    (click)="toggleList()"
+  >
+    Toggle list
+  </button>
+</div>
+<div *ngIf="isListShown">
+  <div *ngFor="let user of (userService.users | lengthValidator: listFilter)">
+    <app-user-info [user]="user"></app-user-info>
+  </div>
+</div>
