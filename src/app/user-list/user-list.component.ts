@@ -18,16 +18,29 @@ export class UserListComponent implements OnInit {
   isClass = true;
 
   constructor(public userService: UsersService) {
-    const subs = this.userService.getEmployees().subscribe(data => {
-      this.employeess = data;
-    });
+    // const subs = this.userService.getEmployees().subscribe(data => {
+    //   this.employeess = data;
+    // });
   }
 
   dec(exp) {
     alert(exp);
   }
 
-  ngOnInit() {}
+  addEmployee() {
+    const emp = {
+      name: 'emp name',
+      age: 24,
+      gender: 'M',
+      experience: 4
+    };
+
+    this.userService.addNewEmp(emp);
+  }
+
+  ngOnInit() {
+    this.userService.fetchEmployees();
+  }
 
   clickme() {}
 

@@ -8,7 +8,15 @@
   </button>
 </div>
 <div *ngIf="isListShown">
-  <div *ngFor="let u of (employeess | lengthValidator: listFilter)">
+  <div
+    *ngFor="
+      let u of (userService.employees$ | async | lengthValidator: listFilter)
+    "
+  >
     <app-user-info [user]="u" (dec)="dec($event)"></app-user-info>
   </div>
 </div>
+
+<button (click)="addEmployee()">
+  Add More Employees
+</button>
