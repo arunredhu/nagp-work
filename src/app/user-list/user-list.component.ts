@@ -23,6 +23,10 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  dec(exp) {
+    alert(exp);
+  }
+
   ngOnInit() {}
 
   clickme() {}

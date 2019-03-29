@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, OnChanges, DoCheck } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  DoCheck,
+  EventEmitter,
+  Output
+} from '@angular/core';
 
 import { UsersService } from '../services/users.service';
 
@@ -10,6 +18,13 @@ import { UsersService } from '../services/users.service';
 export class UserInfoComponent implements OnInit, OnChanges, DoCheck {
   @Input() user;
 
+  @Output() dec = new EventEmitter();
+
+  decrement() {
+    this.user.experience = this.user.experience - 1;
+    this.dec.emit(this.user.experience);
+  }
+
   ngOnInit() {
     console.log('init called', this.user.name);
   }
@@ -19,6 +34,6 @@ export class UserInfoComponent implements OnInit, OnChanges, DoCheck {
   }
 
   ngDoCheck() {
-    // console.log('doCheck called', this.user.name);
+    console.log('doCheck called', this.user.name);
   }
 }

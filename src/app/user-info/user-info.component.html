@@ -3,7 +3,7 @@
   <span>{{ user.age }}</span>
   <span>{{ user.gender }}</span>
   <div class="user-exp">
-    <button class="inc-btn">
+    <button class="inc-btn" (click)="decrement()">
       -
     </button>
     {{ user.experience }}
