@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,6 +12,7 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UserFormComponent } from './user-form/user-form.component';
+import { ReUserFormComponent } from './re-user-form/re-user-form.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,16 @@ import { UserFormComponent } from './user-form/user-form.component';
     UserInfoComponent,
     LengthValidatorPipe,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    ReUserFormComponent
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: []

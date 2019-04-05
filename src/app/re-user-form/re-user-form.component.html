@@ -1,0 +1,14 @@
+<div [formGroup]="userForm">
+  <input type="text" placeholder="name" formControlName="name" />
+  <input type="text" placeholder="Age" formControlName="age" />
+
+  <div formGroupName="address">
+    <input type="text" placeholder="Age" formControlName="addressName1" />
+    <input type="text" placeholder="Age" formControlName="addressName2" />
+  </div>
+</div>
+
+{{ userForm.get('address').status }}
+
+{{ userForm.value | json }}
+{{ userForm.errors | json }}

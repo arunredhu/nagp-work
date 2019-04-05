@@ -7,8 +7,12 @@
       placeholder="User Name"
       #userName="ngModel"
       required
-      name="name"
+      minlength="3"
+      name="name12"
     />
+    <div *ngIf="userName.touched && userName.invalid">
+      control is invalid
+    </div>
   </div>
   <div class="form-element">
     <input
@@ -20,7 +24,4 @@
   </div>
 </form>
 
-<!-- <div>Touched: {{ userName.touched }}</div>
-<div>Pristine: {{ userName.pristine }}</div>
-<div>Invalid: {{ userName.invalid }}</div>
-<div>Dirty: {{ userName.dirty }}</div> -->
+Form Status: {{ userForm.value | json }}

@@ -8,7 +8,7 @@ import { Employee } from '../services/users.service';
 })
 export class UserFormComponent implements OnInit {
   userModel: Employee = {
-    name: 'Arun',
+    name: '',
     age: null,
     experience: null,
     gender: 'Male'
