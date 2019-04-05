@@ -22,7 +22,11 @@ export class UsersService {
   getEmployees() {
     const url = '/assets/employee.json';
 
-    return this.http.get<Employee[]>(url).pipe(tap);
+    return this.http.get<Employee[]>(url).pipe(
+      tap(data => {
+        this.employees$.next(data);
+      })
+    );
   }
 
   fetchEmployees() {
